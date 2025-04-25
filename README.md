@@ -4,11 +4,15 @@
 
 ---
 
+## Workflow
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/7c098946-5353-4099-b8fd-c4df86367b95" />
+
+
 ## ✨ Features
 
 - ✅ REST API to receive label information via JSON
 - ✅ HTML label template rendering
-- ✅ Barcode generation using ZXing (Code 128)
+- ✅ Barcode generation using ZXing
 - ✅ HTML to PDF rendering using OpenHTML to PDF
 
 ---
@@ -48,20 +52,12 @@ fbm-wms-printing-service/
 
 ---
 
-## 🚀 Getting Started
+## 📬 API Overview
 
-### 1. Prerequisites
+| Method | Endpoint              |Content-Type|Accept| Description                      |
+|--------|-----------------------|------------|------|----------------------------------|
+| POST   | `/api/html-label` |`application/json`|`application/pdf`| Generates a PDF label from JSON |
 
-- Java 17
-
-### 2. Build & Run
-
-
-### 3. Test the API
-
-**Endpoint:** `POST /api/label/generate`
-**Content-Type:** `application/json`
-**Accept:** `application/pdf`
 
 #### Example JSON Body:
 
@@ -83,6 +79,9 @@ fbm-wms-printing-service/
 
 - Returns a PDF file (`Content-Type: application/pdf`)
 - Contains the shipping label filled with provided data and barcodes
+
+<img width="990" alt="image" src="https://github.com/user-attachments/assets/86f4d5d0-80b6-4348-bd5c-8a9bace3a639" />
+
 
 ---
 
@@ -108,13 +107,7 @@ This service uses ZXing to generate Code 128 barcodes and embed them into the HT
 ---
 
 
-## 📬 API Overview
 
-| Method | Endpoint              | Description                      |
-|--------|-----------------------|----------------------------------|
-| POST   | `/api/html-label` | Generates a PDF label from JSON |
-
----
 
 ## 🙌 Acknowledgments
 
