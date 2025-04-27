@@ -116,3 +116,24 @@ This service uses ZXing to generate Code 128 barcodes and embed them into the HT
 
 ---
 
+## Comparison: `com.openhtmltopdf` vs. Puppeteer for HTML-to-PDF Conversion
+
+| Feature                | OpenHTMLToPDF (Java)                              | Puppeteer (Node.js)                              |
+|------------------------|--------------------------------------------------|--------------------------------------------------|
+| **Rendering Engine**   | PDFBox (Java-native PDF generation)              | Chrome/Chromium (real browser rendering)         |
+| **CSS3 Support**       | ❌ Partial (CSS2.1 mostly, no Flex/Grid)         | ✅ Full (all Chrome-supported CSS)               |
+| **JavaScript**         | ❌ Not supported                                  | ✅ Supported (can execute dynamic JS)            |
+| **Barcode Generation** | Requires extra libs (e.g., ZXing)                | Native Node.js libs (`qrcode`/`bwip-js`)        |
+| **Page Breaks**        | ✅ Supported (via CSS `page-break`)              | ✅ More precise (browser-like pagination)        |
+| **Font Embedding**     | ✅ Manual configuration needed                   | ✅ Auto-detects system fonts                     |
+| **Complex Layouts**    | ❌ May misalign (Flexbox/Grid issues)            | ✅ Pixel-perfect rendering                       |
+| **Non-Latin Text**     | ✅ Supports (requires font setup)                | ✅ Built-in support                              |
+| **SVG/Canvas**         | ❌ Limited                                       | ✅ Full support                                  |
+| **Responsive Design**  | ❌ No media query support                        | ✅ Supports `@media` rules                       |
+| **Speed**              | ✅ Fast (pure Java)                              | ⚠️ Slower (launches Chrome)                     |
+| **Resource Usage**     | ✅ Low (no additional processes)                 | ⚠️ High (Chromium memory overhead)              |
+| **Concurrency**        | ✅ High (no browser bottlenecks)                 | ⚠️ Needs pool management                        |
+| **Stability**          | ✅ High (no process crashes)                     | ⚠️ Chrome crashes possible                      |
+| **Dependencies**       | ✅ JAR-only                                      | ⚠️ Requires Chromium                            |
+| **Debugging**          | ⚠️ Hard (CSS compatibility issues)              | ✅ Easy (Chrome DevTools)                        |
+| **Dynamic Content**    | ❌ Static HTML only                              | ✅ Can simulate user interactions                |
